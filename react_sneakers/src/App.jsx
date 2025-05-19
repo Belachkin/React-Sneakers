@@ -51,7 +51,7 @@ function App() {
                 </div>
 
                 <button className='addButton'>
-                  <img src="/plus.png" height={20} width={20} />
+                  <img src="/plus.png" height={11} width={11} />
                 </button>
               </div>
             </div>
@@ -67,7 +67,7 @@ function App() {
                 </div>
 
                 <button className='addButton'>
-                  <img src="/plus.png" height={20} width={20} />
+                  <img src="/plus.png" height={11} width={11} />
                 </button>
               </div>
             </div>
@@ -83,7 +83,7 @@ function App() {
                 </div>
 
                 <button className='addButton'>
-                  <img src="/plus.png" height={20} width={20} />
+                  <img src="/plus.png" height={11} width={11} />
                 </button>
               </div>
             </div>
