@@ -100,35 +100,35 @@ header {
     }
 
     .addButton {
-        align-items: center;
-        background: #fff;
-        border: 0px solid #f2f2f2;
+        align-items: center;    
         box-sizing: border-box;
-        border-radius: 8px;
+        
         height: 32px;
         width: 32px;
         cursor: pointer;
+
+        opacity: 0.5;
+        transition: opacity 0.25s ease-in-out;
+        &:hover {
+            opacity: 1;
+        }
     }
 
     .unlikedButton {
         position: absolute;
-        background: #fff;
-        border: 0px solid #f2f2f2;
         box-sizing: border-box;
-        border-radius: 8px;
-        height: 32px;
-        width: 32px;
         cursor: pointer;
+        opacity: 0.5;
+
+        transition: opacity 0.25s ease-in-out;
+        &:hover {
+            opacity: 1;
+        }
     }
 
     .likedButton {
         position: absolute;
-        background: #ffc4c4;
-        border: 1px solid #f2f2f2;
-        box-sizing: border-box;
-        border-radius: 8px;
-        height: 32px;
-        width: 32px;
+        box-sizing: border-box; 
         cursor: pointer;
     }
     
@@ -177,6 +177,11 @@ header {
     h2{
         margin: 0;
     }
+
+    .items {
+        overflow: auto;
+        margin-bottom: 40px;
+    }
 }
 
 .items {
@@ -190,7 +195,7 @@ header {
 
     overflow: hidden;
 
-    button {
+    .removeButton {
         margin: 0;
         border: 0px;
         
@@ -202,7 +207,7 @@ header {
         transition: opacity 0.15s ease-in-out;
     }
 
-    button:hover {
+    .removeButton:hover {
         opacity: 1;
     }
 
@@ -255,6 +260,10 @@ header {
 
         &:hover {
             background:  darken($color: #9DD558, $amount: 5%);
+
+            img, svg {
+                transform: translateX(5px);
+            }
         }
 
         &:active {
@@ -265,10 +274,24 @@ header {
             position: absolute;
             right: 20px;
             top: 16px;
+            transition: transform 0.2s ease-in-out;
         }
     }
 
     
 
     
+}
+
+.cartTopBlock{
+    .closeButton {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.25s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+        
+    }
 }
