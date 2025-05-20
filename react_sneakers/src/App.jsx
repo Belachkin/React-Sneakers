@@ -10,18 +10,44 @@ function App() {
         <div className="overlay">
 
           <div className="drawer">
+
               <h2 className='mb-20'>Корзина</h2>
+              <div className="items">
+                <div className="cartItem d-flex align-center mb-20">
+                    <img src="/sneakers/s1.png" alt="" height={60} width={102} className='mr-20' />
 
-              <div className="cartItem d-flex align-center">
-                <img src="/sneakers/s1.png" alt="" height={60} width={102} className='mr-20' />
-
-                <div>
-                  <p className='mb-5'>Реактивные кроссовки: Nike Her Znaet 1</p>
-                  <b>12 999 руб.</b>
+                    <div>
+                      <p className='mb-5'>Реактивные кроссовки: Nike Her Znaet 1</p>
+                      <b>12 999 руб.</b>
+                    </div>
+                    <button className='mr-5'>
+                      <img src="/icons/RemoveButton.svg" alt="" height={50} width={50} />
+                    </button>
                 </div>
-                <button className='mr-5'>
-                  <img src="/icons/RemoveButton.svg" alt="" height={50} width={50} />
-                </button>
+              </div>
+              
+
+              <div className="cartTotalBlock">
+                <ul>
+                  <li>
+                    <span>Сумма заказа:</span>
+                    <div></div>
+                    <b>12 999 руб.</b>
+                  </li>
+                  <li>
+                    <span>Сервисный сбор:</span>
+                    <div></div>
+                    <b>200 руб.</b>
+                  </li>
+                  <li>
+                    <span>Итого:</span>
+                    <div></div>
+                    <b>13 199 руб.</b>
+                  </li>
+                </ul>
+                <button className='successButton'>Оформить заказ <img src="/icons/arrow.svg" alt="Arrow" height={25} width={25} /></button>
+                <p>Внимание! Сумма заказа не является финальной, так как не расчитана стоимость доставки.</p>
+                
               </div>
           </div>
 

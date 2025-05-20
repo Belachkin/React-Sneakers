@@ -171,13 +171,20 @@ header {
 
     padding: 25px;
 
+    display: flex;
+    flex-direction: column;
+
     h2{
         margin: 0;
     }
 }
 
+.items {
+    flex: 1;
+}
+
 .cartItem {
-    border: 1px solid #e7faff;
+    border: 1px solid #efefef;
     border-radius: 20px;
     padding: 3px;
 
@@ -203,6 +210,65 @@ header {
         font-size: 14px;
     }
 
+
+    
+}
+
+.cartTotalBlock {
+
+    li {
+        display: flex;
+        align-items: flex-end;
+
+        margin-bottom: 10px;
+    }
+
+    div{
+        flex: 1;
+        height: 1;
+        border-bottom: 1px dashed #DFDFDF;
+        position: relative;
+        top: -4px;       
+    }
+
+    p {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+
+    .successButton{
+        position: relative;
+        
+        width: 100%;
+        height: 55px;
+        
+        background: #9DD558;
+        border: 0px;
+        border-radius: 18px;
+
+        color: white;
+        font-size: 17px;
+        font-weight: 500;
+
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+
+        &:hover {
+            background:  darken($color: #9DD558, $amount: 5%);
+        }
+
+        &:active {
+            background: lighten($color: #9DD558, $amount: 5%);
+        }
+
+        img, svg {
+            position: absolute;
+            right: 20px;
+            top: 16px;
+        }
+    }
+
+    
 
     
 }
