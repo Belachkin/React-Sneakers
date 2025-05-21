@@ -5,15 +5,21 @@ import Header from "./components/Header"
 import Overlay from './components/Overlay'
 
 function App() {
-  let [items, setItems] = React.useState([]);
-  
-  fetch('https://682d81614fae188947563ea7.mockapi.io/items').then(res => {
-    return res.json();
-  }).then(json => {
-    setItems(json);
-  });
-  
+  const [items, setItems] = React.useState([]);
   const [isCartOpened, setCartOpened] = React.useState(false);
+
+  React.useEffect(() => {
+      fetch('https://682d81614fae188947563ea7.mockapi.io/items')
+      .then(res => {
+        return res.json();
+      }).then(json => {
+        setItems(json);
+      });
+  }, []);
+
+
+  
+  
 
 
 
