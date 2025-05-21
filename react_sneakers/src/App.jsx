@@ -7,6 +7,7 @@ import Overlay from './components/Overlay'
 function App() {
   const [items, setItems] = React.useState([]);
   const [isCartOpened, setCartOpened] = React.useState(false);
+  const [cartItems, setCartItems] = React.useState([]);
 
   React.useEffect(() => {
       fetch('https://682d81614fae188947563ea7.mockapi.io/items')
@@ -17,18 +18,16 @@ function App() {
       });
   }, []);
 
-
-  
-  
-
-
+  const onAddToCart = (obj) => {
+      setCartItems([...cartItems,obj]);
+  }
 
   return (
     <>
       <div className='wrapper clear'>
 
         
-        {isCartOpened == true && <Overlay onClickClose={() => setCartOpened(false)} /> }
+        {isCartOpened == true && <Overlay items={cartItems} onClickClose={() => setCartOpened(false)} /> }
 
         <Header onClickCart={() => setCartOpened(true)} />
 
@@ -48,8 +47,8 @@ function App() {
 
           
 
-          {items.map((obj) => (
-              <Card title={obj.name} price={obj.price} img={obj.img} />
+          {items.map((item) => (
+              <Card onClickAddToCart={(obj) => {onAddToCart(obj)}} title={item.name} price={item.price} img={item.img} />
           ))}
 
           </div>

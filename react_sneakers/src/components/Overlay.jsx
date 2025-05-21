@@ -1,5 +1,8 @@
-function Overlay(props) {
+import CartItem from "./CartItem";
+
+function Overlay({onClickClose, items = []}) {
     return(
+        
         <div  className="overlay">
 
           <div className="drawer">
@@ -7,23 +10,32 @@ function Overlay(props) {
             <div className="cartTopBlock d-flex align-center justify-between mb-20">
                 <h2 className=''>Корзина</h2>
                 
-                <img src="/icons/RemoveButton.svg" alt="" onClick={props.onClickClose} className='closeButton' height={60}  width={60}/>
+                <img src="/icons/RemoveButton.svg" alt="" onClick={onClickClose} className='closeButton' height={60}  width={60}/>
                 
             </div>
 
               <div className="items">
-                <div className="cartItem d-flex align-center mb-20">
-                    <img src="/sneakers/s1.png" alt="" height={60} width={102} className='mr-20' />
 
-                    <div>
-                      <p className='mb-5'>Реактивные кроссовки: Nike Her Znaet 1</p>
-                      <b>12 999 руб.</b>
-                    </div>
-                    
-                      <img src="/icons/RemoveButton.svg" alt="" className='removeButton mr-5' height={50} width={50} />
-                    
-                </div>
+                {
+                  items.map(obj =>(
+                    <CartItem title={obj.title} price={obj.price} img={obj.img} />
+                  ))
+                  
+                //   items.map(props => {
+                //       <div className="cartItem d-flex align-center mb-20">
+                //     <img src={"/sneakers/" + props.img} alt="" height={60} width={102} className='mr-20' />
 
+                //     <div>
+                //       <p className='mb-5'>{props.title}</p>
+                //       <b>{props.price} руб.</b>
+                //     </div>
+                    
+                //       <img src="/icons/RemoveButton.svg" alt="" className='removeButton mr-5' height={50} width={50} />
+                    
+                // </div>
+                //   })
+
+                }
                                 
               </div>
               
