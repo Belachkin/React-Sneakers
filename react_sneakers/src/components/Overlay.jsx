@@ -1,13 +1,13 @@
-function Overlay() {
+function Overlay(props) {
     return(
-        <div style={{display: 'none'}} className="overlay">
+        <div  className="overlay">
 
           <div className="drawer">
 
             <div className="cartTopBlock d-flex align-center justify-between mb-20">
                 <h2 className=''>Корзина</h2>
                 
-                <img src="/icons/RemoveButton.svg" alt="" className='closeButton' height={60}  width={60}/>
+                <img src="/icons/RemoveButton.svg" alt="" onClick={props.onClickClose} className='closeButton' height={60}  width={60}/>
                 
             </div>
 

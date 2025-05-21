@@ -239,3 +239,19 @@ header {
         
     }
 }
+
+.cartButton {
+    cursor: pointer;
+
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    padding: 5px;
+    background: #ffffff;
+
+    transition: border 0.15s ease-in-out, background 0.15s ease-in-out;
+
+    &:hover {
+        border: 1px solid #f9f9f9;
+        background: #f9f9f9;
+    }
+}

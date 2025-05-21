@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 import 'macro-css'
 import Card from "./components/Card"
 import Header from "./components/Header"
@@ -13,13 +13,16 @@ const arr = [{name: "Реактивные кроссовки: Nike Her Znaet 1",
 
 function App() {
   
+  const [isCartOpened, setCartOpened] = React.useState(false);
+
   return (
     <>
       <div className='wrapper clear'>
 
-        <Overlay />
+        
+        {isCartOpened == true && <Overlay onClickClose={() => setCartOpened(false)} /> }
 
-        <Header/>
+        <Header onClickCart={() => setCartOpened(true)} />
 
         <div className="content p-40 ">
           <div className='mb-40 d-flex justify-between'>
